@@ -52,9 +52,9 @@ A prediction on the test data should verify the accuracy of the model and check 
 pred <- predict(model,newdata=testing) 
 cm <- confusionMatrix(testing$classe,pred)
 ```
-The confusion matrix shows an out of sample accuracy of `r cm$overall["Accuracy"]`
+The confusion matrix shows an out of sample accuracy of `r (cm$overall["Accuracy"])`
 ```{r, echo=FALSE}
 cm$table
 cm$overall[c(1,3,4,6)]
 ```
-The estimated out of sample error is `r  1-cm$overall["Accuracy"]`.
+The estimated out of sample error is `r (1-cm$overall["Accuracy"])`.
